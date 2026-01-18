@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: gray;
+        }
+        .container{
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card{
+            text-align: center;
+            background-color: white;
+            padding: 50px;
+            border-radius: 5px;
+            box-shadow: -5px -5px 10px black;
+        }
+        .btn{
+            height: 50px;
+            width: 80%;
+            border: none;
+            background-color: lightblue;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1 class="heading">Simple Add to Cart</h1>
+            <button class="btn">Add to Cart</button>
+            <p class="para">Try Hover, Click, Or move Away</p>
+        </div>
+    </div>
+
+    <script>
+        const b= document.querySelector(".btn");
+        const p = document.querySelector(".para");
+        b.addEventListener("click",function(){
+            p.textContent="Added To Cart";
+        })
+
+        b.addEventListener("mouseover",function(){
+            p.textContent="Mouse over"
+        })
+                b.addEventListener("mouseout",function(){
+            p.textContent="Mouse Away"
+        })
+
+
+    </script>
+</body>
+</html>

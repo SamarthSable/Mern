@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sidebar</title>
+    <!-- Add font link here -->
+    <!-- Add stylesheet link here -->
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        .sidebar {
+            border-width: 1px 1px 1px 0;
+            border-style: solid;
+            border-color: #dadada;
+            margin: 1rem;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            width: 10rem;
+            height: 80vh;
+            border-radius: 5px;
+        }
+
+        #sb-heading {
+            color: blueviolet;
+            padding: 0 0.5rem 0 0.5rem;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+
+        }
+
+        .sb-item {
+            padding: 0.5rem;
+            margin-bottom: 4px;
+            font-size: 12px;
+            display: block;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+
+        }
+
+        .sb-item:hover {
+            font-weight: 600;
+            background-color: #f0f0f0;
+
+        }
+    </style>
+</head>
+
+<body>
+    <aside class="sidebar">
+        <h3 id="sb-heading">Workspace</h3>
+        <div class="sb-item">Home</div>
+        <div class="sb-item">Dashboard</div>
+        <div class="sb-item">Analytics</div>
+        <div class="sb-item">Profile</div>
+    </aside>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        #parent{
+            border: 2px solid black;
+            padding: 20px;
+            margin: 10px;
+            position: relative;
+            height: 600px;
+            width: 600px;
+
+        }
+        #one{
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            display: inline-block;
+            position: absolute;
+            left: 10px;
+            top:10px;
+        }
+        #two{
+            width: 100px;
+            height: 100px;
+            background-color: gray;
+            display: inline-block;
+            position: absolute;
+            right: 10px;
+            top:10px;            
+
+        }
+        #three{
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            display: inline-block;
+            position: absolute;
+            right: 10px;
+            bottom:10px;            
+        } 
+        #four{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            display: inline-block;
+            position:absolute;
+            left:10px;
+            bottom: 10px;
+        }  
+        #five{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            display: inline-block;
+            position:absolute;
+            transform: translate(-50%,-50%);
+            top:50%;
+            left:50%;
+        }        
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="parent">
+        <div id="one"></div>
+        <div id="two"></div>
+        <div id="three"></div>
+        <div id="four"></div>
+        <div id="five"></div>
+    </div>
+</body>
+</html>

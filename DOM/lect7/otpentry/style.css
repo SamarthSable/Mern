@@ -1,0 +1,32 @@
+   body {
+       font-family: Arial, sans-serif;
+       background: #f4f6fb;
+       height: 100vh;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+   }
+  
+  .container {
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      width: 350px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+.key{
+    width: 45px;
+        height: 55px;
+        font-size: 24px;
+        text-align: center;
+        border: 2px solid #ccc;
+        border-radius: 6px;
+        outline: none;
+
+    &:focus{
+        border: 2px solid #1e90ff;
+        outline: none
+    }
+}

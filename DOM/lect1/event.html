@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+</head>
+<body>
+    <h2 id="msg">Hello Students</h2>
+    <button id ="btn">Change text</button>
+
+    <script>
+        document.querySelector("#btn").addEventListener("click",function(){
+            document.querySelector("#msg").textContent="Welcome TO Dom Class";
+        })
+    </script>
+</body>
+</html>

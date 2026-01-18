@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selector</title>
+</head>
+<body>
+    <div>
+        <h1 class="head" id="heading">Welcome</h1>
+        <p class="para">This is first paragraph</p>
+        <p class="para">This is second paragraph</p>
+        <p class="para">This is third paragraph</p>
+    </div>
+
+    <script>
+        let heading = document.getElementById("heading");
+        console.log(heading.innerText);
+
+        let classPara = document.getElementsByClassName("para");
+        console.log(classPara);
+
+        let heading2 = document.querySelector("#heading");
+        let classPara2= document.querySelector(".para");
+        console.log(classPara2);
+
+        let heading3 = document.querySelectorAll("#heading");
+        let classPara3 = document.querySelectorAll(".para");
+        console.log(classPara3);
+    </script>
+</body>
+</html>
