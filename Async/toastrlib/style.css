@@ -1,0 +1,60 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    gap: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#success {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+}
+
+#error {
+    background-color: #f44336;
+    color: white;
+    border: none;
+}
+
+#info {
+    background-color: #2196F3;
+    color: white;
+    border: none;
+}
+
+#warning {
+    background-color: #ff9800;
+    color: white;
+    border: none;
+}
+
+#toastr {
+    height: 50px;
+    width: 500px;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+#toastr.show {
+    opacity: 1;
+}

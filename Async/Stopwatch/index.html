@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stop Watch</title>
+    <style>
+      .container {
+        width: 400px;
+        margin: 100px auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        flex-direction: column;
+        .stop-watch {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 8px;
+          .digits {
+            font-size: 1.5rem;
+            font-weight: 600;
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="container">
+      <section class="stop-watch">
+        <span class="digits" id="hours"> 00 </span>
+        <span>:</span>
+        <span class="digits" id="minutes"> 00 </span>
+        <span>:</span>
+        <span class="digits" id="seconds"> 00 </span>
+      </section>
+      <section class="controls">
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+      </section>
+    </section>
+    <script src="main.js"></script>
+  </body>
+</html>
