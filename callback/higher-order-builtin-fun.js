@@ -33,7 +33,7 @@ let personlist = [
 console.log(
   personlist.filter((person) => {
     return person.age < 30;
-  })
+  }),
 );
 
 //reduce
@@ -44,7 +44,7 @@ console.log(
   "sum of all numbers in arry 3 is:",
   arr3.reduce((prev, currentVal) => {
     return prev + currentVal;
-  })
+  }),
 );
 
 let cart = [
@@ -66,5 +66,5 @@ console.log(
   "Total cost of items is:",
   cart.reduce((item, curretncost) => {
     return item + curretncost.cost;
-  }, 0)
+  }, 0),
 );

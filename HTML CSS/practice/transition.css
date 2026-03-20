@@ -1,0 +1,19 @@
+.box{
+    background-color: skyblue;
+    height:50px;
+    width: 300px;
+    border-radius: 5px;
+    text-align: center;
+    border:2px solid black;
+    transition: all;
+    transition-duration: 2s;
+    transition-timing-function: steps;
+    
+}
+
+.box:hover{
+   background-color: red; 
+   color: white;
+   font-size: 20px;
+transform: rotate(45deg);
+}
