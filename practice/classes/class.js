@@ -301,3 +301,55 @@ class RectangleShape extends Shape {
 
 console.log(new Circle(5).area());
 console.log(new RectangleShape(4, 6).area());
+
+/* 
+Write a JavaScript code to design a system for vehicles as described below. There are two types of vehicles: Car and Bike. All vehicles have a brand name (e.g., Honda, Toyota) and a year of manufacturing. Vehicles can display their basic information. Cars and Bikes inherit from Vehicle but have their own extra behavior.
+
+Create a Base Class Vehicle with properties - brand (string) and year (number), and a private property #chassisNumber (generate a random 6-digit number inside the constructor). The method displayInfo() should print brand, year, and chassis number.
+
+Create a Subclass Car that inherits from Vehicle. It should have an extra property fuelType (string like petrol/diesel/electric) and override the displayInfo() method to first call the Vehicle’s displayInfo() and then add printing of fuelType also.
+
+Create a Subclass Bike that inherits from Vehicle. It should have an extra property engineCapacity (in cc) and override the displayInfo() method to first call the Vehicle’s displayInfo() and then add printing of engineCapacity.
+
+Finally, create objects of Car and Bike with sample data - Car: brand = "Honda", year = 2022, fuelType = "Petrol", Bike: brand = "Royal Enfield", year = 2021, engineCapacity = 350, and call displayInfo() on both objects. */
+
+class Vehicle {
+  #chassisnumber;
+
+  constructor(brandName, YearOfManufacturing) {
+    this.brandName = brandName;
+    this.YearOfManufacturing = YearOfManufacturing;
+    this.#chassisnumber = Math.floor(100000 + Math.random() * 900000);
+  }
+
+  displayInfo() {
+    console.log(this.brandName, this.YearOfManufacturing, this.#chassisnumber);
+  }
+}
+
+class car extends Vehicle {
+  constructor(fueltype, brandName, YearOfManufacturing) {
+    super(brandName, YearOfManufacturing);
+    this.fueltype = fueltype;
+  }
+
+  displayInfo() {
+    super.displayInfo();
+    console.log(this.fueltype);
+  }
+}
+
+class bike extends Vehicle {
+  constructor(engineCapacity, brandName, YearOfManufacturing) {
+    super(brandName, YearOfManufacturing);
+    this.engineCapacity = engineCapacity;
+  }
+
+  displayInfo() {
+    super.displayInfo();
+    console.log(this.engineCapacity);
+  }
+}
+
+let mycar = new car("Petrol", "Honda", 2022);
+mycar.displayInfo();
