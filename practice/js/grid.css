@@ -1,0 +1,62 @@
+.container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 100px 100px 100px;
+    border: 2px solid black;
+    outline: 2px solid blue;
+    gap: 10px;
+    background-color: brown;
+    transition: background-color 1s ease-out;
+
+    grid-template-areas: 
+        "header header header"
+        "sidebar content content"
+        "footer footer footer";
+
+}
+
+.container:hover{
+    background-color: blue;
+}
+
+.item{
+    border: 2px solid black;
+}
+
+.header{
+    grid-area: header;
+}
+.sidebar {
+    grid-area: sidebar;
+}
+
+.content {
+    grid-area: content;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+.header1{
+    position: sticky;
+    top:0;
+    background-color: white;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.parent {
+    border: 2px solid black;
+    height: 500px;
+    width: 500px;
+}
+
+.child {
+    position: absolute;
+    bottom: 0;
+    border: 2px solid black;
+    height: 100PX;
+    width: 100px;
+}
