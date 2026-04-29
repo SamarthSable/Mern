@@ -150,8 +150,98 @@
 //     console.log(err);
 //   });
 
-fetch("https://jsonplaceholder.typicode.com/users/1")
-  .then((response) => response.json())
-  .then((data) => {
-    console.log(data);
-  });
+// fetch("https://jsonplaceholder.typicode.com/users/1")
+//   .then((response) => response.json())
+//   .then((data) => {
+//     console.log(data);
+//   });
+// function getUser(callback) {
+//   setTimeout(() => {
+//     console.log("User data");
+//     callback("User data");
+//   }, 1000);
+// }
+
+// function getPosts(user, callback) {
+//   setTimeout(() => {
+//     console.log("Posts data");
+//     callback("Posts data");
+//   }, 1000);
+// }
+
+// function getComments(posts, callback) {
+//   setTimeout(() => {
+//     console.log("Comments data");
+//     callback("Comments data");
+//   }, 1000);
+// }
+
+// // Callback Hell 😈
+// getUser((user) => {
+//   getPosts(user, (posts) => {
+//     getComments(posts, (comments) => {
+//       console.log("All done");
+//     });
+//   });
+// });
+
+// function getUser() {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve("User data");
+//     }, 1000);
+//   });
+// }
+
+// function getPosts(user) {
+//   return new Promise(() => {
+//     setTimeout(() => {
+//       if (user) {
+//         resolve("Posts data");
+//       } else {
+//         reject("User Not send");
+//       }
+//     }, 1000);
+//   });
+// }
+
+// function getComments(posts) {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve("Comments data");
+//     }, 1000);
+//   });
+// }
+
+// getUser()
+//   .then((userData) => {
+//     return userData;
+//   })
+//   .then();
+
+// async function getUser() {
+//   try {
+//     const userData = await fetch("https://jsonplaceholder.typicode.com/users");
+//     const data = await userData.json();
+//     console.log(data[0]);
+//   } catch (err) {
+//     console.log(err);
+//   }
+// }
+// getUser();
+let n = 5;
+
+for (let i = 0; i < n; i++) {
+  let str = "";
+  str += " ".repeat(n - i - 1) + "*".repeat(2 * i + 1);
+  console.log(str);
+}
+
+// let n = 5;
+
+// for (let i = 0; i < n; i++) {
+//   let str = "";
+//   str += " ".repeat(n - i - 1);
+//   str += "*".repeat(2 * i + 1);
+//   console.log(str);
+// }
