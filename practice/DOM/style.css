@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.addnote,
+.list {
+    width: 50%;
+    padding: 20px;
+    border: 1px solid black;
+}
+
+.addnote {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#title,
+#note {
+    width: 100%;
+    padding: 8px;
+}
+
+#note {
+    height: 100px;
+}
+
+button {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.list ul {
+    padding: 0;
+}
+
+.list li {
+    list-style: none;
+    margin: 10px 0;
+}
+
+.note-card {
+    border: 1px solid gray;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.note-card button {
+    margin-right: 5px;
+}
+
+.pinned {
+    background: #fff3a0;
+}

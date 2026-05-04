@@ -1,15 +1,12 @@
-export default function Modal({ sendvalue }) {
+export default function Modal({ sendValue }) {
   return (
-    <div className="overlay">
-      <div className="d-flex flex-column border border-primary justify-content-center align-items-center">
-        <h1>Questions will appear here</h1>
-        <p>Question1</p>
-        <p>Question1</p>
-        <p>Question1</p>
-        <button className="btn-primary" onClick={() => sendvalue(false)}>
-          Hide
-        </button>
+    <>
+      <div className="overlay">
+        <div className="modal1">
+          <p>This is Alert Dont Make This Mistake Again</p>
+          <button onClick={() => sendValue(false)}>Hide</button>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
