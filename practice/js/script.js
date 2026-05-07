@@ -521,10 +521,41 @@ Return only books where isIssued = false */
 // const debounceUpdate = debounce(updateDisplay, 5000);
 // input.addEventListener("input", debounceUpdate);
 
-let array = [1, 5, 9, 6];
+// let array = [1, 5, 9, 6];
 
-console.log(
-  array.reduce((total, num) => {
-    return total + num;
-  }, 0),
-);
+// console.log(
+//   array.reduce((total, num) => {
+//     return total + num;
+//   }, 0),
+// );
+
+// fetchI =
+//   ("",
+//   {
+//     method: "POST",
+//     header: {
+//       'content-type': 'application / json',
+//   },
+
+//     body:JSON.stringify()
+//   });
+
+const display = document.querySelector(".display");
+const input = document.querySelector("#input");
+
+function debounce(fn, delay) {
+  let timeId;
+  return function (...args) {
+    clearTimeout(timeId);
+    const timeID = setTimeout(() => {
+      fn.apply(this, args);
+    }, delay);
+  };
+}
+
+function updateDisplay() {
+  display.textContent = input.value;
+}
+
+const updateDebounce = debounce(updateDisplay, 2000);
+input.addEventListener("input", updateDebounce);
