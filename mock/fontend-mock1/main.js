@@ -60,38 +60,38 @@
 //   console.log(grouped);
 // }
 
-// console.log("Start");
-// console.log(1);
-// setTimeout(() => {
-//   console.log(3);
-// });
-// Promise.resolve().then(() => {
-//   console.log(4);
-// });
-// Promise.resolve().then(() => {
-//   console.log(5);
-// });
-// Promise.resolve().then(() => {
-//   console.log(6);
-// });
-// console.log("end");
+console.log("Start");
+console.log(1);
+setTimeout(() => {
+  console.log(3);
+});
+Promise.resolve().then(() => {
+  console.log(4);
+});
+Promise.resolve().then(() => {
+  console.log(5);
+});
+Promise.resolve().then(() => {
+  console.log(6);
+});
+console.log("end");
 
-// console.log(1);
-// setTimeout(function a() {
-//   console.log(2);
-// }, 0);
-// Promise.resolve().then(function b() {
-//   console.log(3);
-// });
-// Promise.resolve().then(function c() {
-//   console.log(4);
-//   setTimeout(function d() {
-//     console.log(5);
-//   }, 0);
-// });
+console.log(1);
+setTimeout(function a() {
+  console.log(2);
+}, 0);
+Promise.resolve().then(function b() {
+  console.log(3);
+});
+Promise.resolve().then(function c() {
+  console.log(4);
+  setTimeout(function d() {
+    console.log(5);
+  }, 0);
+});
 
-// console.log(6);
-// // 1 6 2 3 4 5
+console.log(6);
+// 1 6 2 3 4 5
 
 const people = [
   { name: "A", age: 20 },

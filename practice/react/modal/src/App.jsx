@@ -1,9 +1,10 @@
 import { useState } from "react";
+import ControlledForm from "./ControlledForm";
 // import ChildParet from "./ChildParet";
-import Modal from "./modal";
+// import Modal from "./modal";
 
-import UseofRef from "./UseofRef";
-import UserDetail from "./UserDetail";
+// import UseofRef from "./UseofRef";
+// import UserDetail from "./UserDetail";
 
 // import FetchPost from "./FetchPost";
 
@@ -14,18 +15,18 @@ import UserDetail from "./UserDetail";
 // import SearchFilter from "./components/SearchFilter";
 function App() {
   // const [data, setData] = useState("");
-  const [value, setValue] = useState(false);
-  function handleValue(data) {
-    setValue(data);
-  }
+  // const [value, setValue] = useState(false);
+  // function handleValue(data) {
+  //   setValue(data);
+  // }
 
-  if (!value) {
-    return (
-      <div>
-        <button onClick={() => handleValue(true)}>Show</button>
-      </div>
-    );
-  }
+  // if (!value) {
+  //   return (
+  //     <div>
+  //       <button onClick={() => handleValue(true)}>Show</button>
+  //     </div>
+  //   );
+  // }
 
   // function handleChild(value) {
   //   setData(value);
@@ -38,7 +39,7 @@ function App() {
 
   return (
     <>
-      <Modal sendValue={handleValue} />
+      {/* <Modal sendValue={handleValue} /> */}
       {/* <h1>{data}</h1> */}
       {/* <ChildParet sendData={handleChild}></ChildParet> */}
       {/* <FromData /> */}
@@ -60,6 +61,7 @@ function App() {
       {/* <FetchPost /> */}
       {/* <UserDetail /> */}
       {/* <UseofRef /> */}
+      <ControlledForm />
     </>
   );
 }

@@ -1,0 +1,12 @@
+.orderList{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+}
+
+.list{
+    border: 2px solid black;
+    list-style: none;
+    padding: 10px;
+    
+}
