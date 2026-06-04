@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InternMatch</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        background: linear-gradient(135deg, #091322, #1d123f, #281b52);
+        color: white;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 8%;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(12px);
+        position: sticky;
+        top: 0;
+      }
+
+      .logo {
+        font-size: 28px;
+        font-weight: bold;
+        color: #38bdf8;
+      }
+
+      .links {
+        display: flex;
+        gap: 25px;
+      }
+
+      .links a {
+        color: white;
+        text-decoration: none;
+      }
+
+      .hero {
+        padding: 100px 8%;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 60px;
+      }
+
+      .hero span {
+        color: #7c3aed;
+      }
+
+      .hero p {
+        margin-top: 20px;
+        opacity: 0.8;
+      }
+
+      .section {
+        padding: 60px 8%;
+      }
+
+      .filters {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+      }
+
+      input,
+      select,
+      button {
+        padding: 14px;
+        border: none;
+        border-radius: 12px;
+      }
+
+      input,
+      select {
+        background: rgba(255, 255, 255, 0.08);
+        color: white;
+      }
+
+      option {
+        color: black;
+      }
+
+      button {
+        cursor: pointer;
+        background: linear-gradient(90deg, #7c3aed, #38bdf8);
+        color: white;
+      }
+
+      button:hover {
+        transform: translateY(-2px);
+      }
+
+      .counter {
+        margin-top: 20px;
+      }
+
+      .spinner {
+        display: none;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .loader {
+        width: 45px;
+        height: 45px;
+        margin: auto;
+        border: 4px solid #444;
+        border-top: 4px solid #38bdf8;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+      }
+
+      .card {
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(18px);
+        padding: 20px;
+        border-radius: 18px;
+        animation: fade 0.5s;
+        transition: 0.3s;
+      }
+
+      .card:hover {
+        transform: translateY(-8px);
+      }
+
+      .card h3 {
+        color: #38bdf8;
+      }
+
+      .badge {
+        display: inline-block;
+        margin-top: 12px;
+        padding: 8px 14px;
+        background: #7c3aed66;
+        border-radius: 30px;
+      }
+
+      .alert {
+        text-align: center;
+      }
+
+      .toast {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #111;
+        padding: 14px 20px;
+        border-radius: 12px;
+        display: none;
+      }
+
+      footer {
+        padding: 40px;
+        text-align: center;
+        opacity: 0.7;
+      }
+
+      @keyframes spin {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes fade {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .hero h1 {
+          font-size: 36px;
+        }
+
+        .links {
+          display: none;
+        }
+
+        .filters {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div class="logo">InternMatch</div>
+
+      <div class="links">
+        <a href="#jobs"> Jobs </a>
+
+        <a href="#alerts"> Alerts </a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <h1>
+        Find Your Next
+
+        <span> Internship </span>
+      </h1>
+
+      <p>Search opportunities by skill, location and experience.</p>
+    </section>
+
+    <section class="section">
+      <div class="filters">
+        <input id="skill" placeholder="Search Skill" />
+
+        <select id="location">
+          <option value="">All Locations</option>
+
+          <option>Pune</option>
+          <option>Mumbai</option>
+          <option>Bangalore</option>
+          <option>Hyderabad</option>
+        </select>
+
+        <select id="exp">
+          <option value="">Experience</option>
+
+          <option>Fresher</option>
+          <option>0-1 Years</option>
+          <option>1-2 Years</option>
+        </select>
+
+        <button onclick="searchJobs()">Search</button>
+
+        <button onclick="clearFilters()">Clear</button>
+      </div>
+
+      <div class="counter">
+        Showing
+
+        <span id="count"> 0 </span>
+
+        Internships
+      </div>
+    </section>
+
+    <div class="spinner" id="spinner">
+      <div class="loader"></div>
+    </div>
+
+    <section class="section" id="jobs">
+      <div class="cards" id="cards"></div>
+    </section>
+
+    <section class="section alert" id="alerts">
+      <h2>Enable Job Alerts</h2>
+
+      <br />
+
+      <input id="email" placeholder="Enter Email" />
+
+      <br /><br />
+
+      <button onclick="subscribe()">Enable Alerts</button>
+    </section>
+
+    <div class="toast" id="toast">saved</div>
+
+    <footer>InternMatch © 2026</footer>
+
+    <script>
+      const jobs = [
+        {
+          title: "Frontend Intern",
+          location: "Pune",
+          exp: "Fresher",
+        },
+
+        {
+          title: "MERN Intern",
+          location: "Bangalore",
+          exp: "0-1 Years",
+        },
+
+        {
+          title: "React Developer Intern",
+          location: "Mumbai",
+          exp: "1-2 Years",
+        },
+
+        {
+          title: "Full Stack Intern",
+          location: "Hyderabad",
+          exp: "0-1 Years",
+        },
+
+        {
+          title: "UI Developer Intern",
+          location: "Pune",
+          exp: "Fresher",
+        },
+
+        {
+          title: "JavaScript Intern",
+          location: "Bangalore",
+          exp: "1-2 Years",
+        },
+      ];
+
+      function render(data) {
+        const cards = document.getElementById("cards");
+
+        cards.innerHTML = "";
+
+        document.getElementById("count").innerText = data.length;
+
+        if (!data.length) {
+          cards.innerHTML = `
+<h2>
+No internships found
+</h2>
+`;
+
+          return;
+        }
+
+        data.forEach((job) => {
+          cards.innerHTML += `
+
+<div class="card">
+
+<h3>
+
+${job.title}
+
+</h3>
+
+<p>
+
+📍 ${job.location}
+
+</p>
+
+<div class="badge">
+
+${job.exp}
+
+</div>
+
+</div>
+
+`;
+        });
+      }
+
+      function searchJobs() {
+        spinner.style.display = "block";
+
+        setTimeout(() => {
+          let skill = document.getElementById("skill").value.toLowerCase();
+
+          let loc = location.value;
+
+          let exp = document.getElementById("exp").value;
+
+          let result = jobs.filter(
+            (j) =>
+              j.title.toLowerCase().includes(skill) &&
+              (!loc || j.location === loc) &&
+              (!exp || j.exp === exp),
+          );
+
+          render(result);
+
+          spinner.style.display = "none";
+        }, 700);
+      }
+
+      function clearFilters() {
+        skill.value = "";
+
+        location.value = "";
+
+        exp.value = "";
+
+        render(jobs);
+      }
+
+      function toast(msg) {
+        let t = document.getElementById("toast");
+
+        t.innerText = msg;
+
+        t.style.display = "block";
+
+        setTimeout(() => {
+          t.style.display = "none";
+        }, 2500);
+      }
+
+      function subscribe() {
+        let email = document.getElementById("email").value.trim();
+
+        let valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+        if (!valid) {
+          toast("Invalid Email");
+
+          return;
+        }
+
+        localStorage.setItem("internEmail", email);
+
+        toast("Alerts Enabled");
+      }
+
+      window.onload = () => {
+        let saved = localStorage.getItem("internEmail");
+
+        if (saved) {
+          document.getElementById("email").value = saved;
+        }
+
+        render(jobs);
+      };
+    </script>
+  </body>
+</html>

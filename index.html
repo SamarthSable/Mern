@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>InternMatch | AI Internship Platform</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#0f172a;
+color:white;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+/* Navbar */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:#081224;
+position:sticky;
+top:0;
+z-index:100;
+}
+
+.logo{
+font-size:28px;
+font-weight:bold;
+color:#38bdf8;
+}
+
+nav ul{
+display:flex;
+gap:25px;
+list-style:none;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+}
+
+nav a:hover{
+color:#38bdf8;
+}
+
+/* Hero */
+
+.hero{
+min-height:90vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:50px;
+}
+
+.hero-content{
+max-width:900px;
+}
+
+.hero h1{
+font-size:60px;
+margin-bottom:20px;
+}
+
+.hero span{
+color:#38bdf8;
+}
+
+.hero p{
+font-size:20px;
+line-height:1.8;
+opacity:.9;
+}
+
+.btn{
+display:inline-block;
+margin-top:30px;
+padding:15px 35px;
+background:#38bdf8;
+color:black;
+border-radius:10px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.btn:hover{
+transform:scale(1.05);
+}
+
+/* Sections */
+
+section{
+padding:80px 8%;
+}
+
+.heading{
+text-align:center;
+font-size:40px;
+margin-bottom:40px;
+}
+
+.problem{
+background:#111827;
+border-radius:20px;
+padding:40px;
+line-height:1.8;
+}
+
+/* Features */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:#1e293b;
+padding:30px;
+border-radius:20px;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card h3{
+color:#38bdf8;
+margin-bottom:15px;
+}
+
+/* Steps */
+
+.steps{
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+justify-content:center;
+}
+
+.step{
+background:#1e293b;
+padding:25px;
+width:250px;
+text-align:center;
+border-radius:15px;
+}
+
+.step-number{
+font-size:40px;
+color:#38bdf8;
+margin-bottom:10px;
+}
+
+/* Stats */
+
+.stats{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+}
+
+.stat{
+background:#1e293b;
+padding:30px;
+border-radius:20px;
+width:250px;
+text-align:center;
+}
+
+.counter{
+font-size:40px;
+color:#38bdf8;
+}
+
+/* CTA */
+
+.cta{
+text-align:center;
+}
+
+footer{
+background:#081224;
+padding:30px;
+text-align:center;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:40px;
+}
+
+nav{
+flex-direction:column;
+gap:20px;
+}
+
+nav ul{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+}
+</style>
+
+</head>
+
+<body>
+
+<nav>
+<div class="logo">InternMatch</div>
+
+<ul>
+<li><a href="#problem">Problem</a></li>
+<li><a href="#solution">Solution</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<!-- Hero -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>
+Find Your Perfect <span>Internship</span> Faster
+</h1>
+
+<p>
+AI-powered internship discovery platform helping students find opportunities based on skills, goals, and interests.
+</p>
+
+<a href="#features" class="btn">
+Get Started
+</a>
+
+</div>
+
+</section>
+
+<!-- Problem -->
+
+<section id="problem">
+
+<h2 class="heading">
+The Problem
+</h2>
+
+<div class="problem">
+
+Students struggle to find relevant internships because opportunities are spread across multiple platforms. Many applications do not match their skills or interests, causing confusion and missed opportunities.
+
+</div>
+
+</section>
+
+<!-- Solution -->
+
+<section id="solution">
+
+<h2 class="heading">
+Our Solution
+</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>AI Matching</h3>
+<p>
+Find internships based on your profile and interests.
+</p>
+</div>
+
+<div class="card">
+<h3>Resume Guidance</h3>
+<p>
+Get suggestions to improve applications.
+</p>
+</div>
+
+<div class="card">
+<h3>Application Tracker</h3>
+<p>
+Track all internship applications.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- Features -->
+
+<section id="features">
+
+<h2 class="heading">
+Features
+</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Smart Recommendations</h3>
+<p>AI suggests internships.</p>
+</div>
+
+<div class="card">
+<h3>Verified Opportunities</h3>
+<p>Filter trusted companies.</p>
+</div>
+
+<div class="card">
+<h3>Deadline Alerts</h3>
+<p>Never miss applications.</p>
+</div>
+
+<div class="card">
+<h3>Career Roadmap</h3>
+<p>Know what skills to build.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- Workflow -->
+
+<section>
+
+<h2 class="heading">
+How It Works
+</h2>
+
+<div class="steps">
+
+<div class="step">
+<div class="step-number">1</div>
+Create Profile
+</div>
+
+<div class="step">
+<div class="step-number">2</div>
+AI Analyzes Skills
+</div>
+
+<div class="step">
+<div class="step-number">3</div>
+Receive Matches
+</div>
+
+<div class="step">
+<div class="step-number">4</div>
+Apply Easily
+</div>
+
+</div>
+
+</section>
+
+<!-- Stats -->
+
+<section>
+
+<h2 class="heading">
+Impact
+</h2>
+
+<div class="stats">
+
+<div class="stat">
+<div class="counter" data-target="1000">
+0
+</div>
+Students
+</div>
+
+<div class="stat">
+<div class="counter" data-target="500">
+0
+</div>
+Internships
+</div>
+
+<div class="stat">
+<div class="counter" data-target="95">
+0
+</div>
+Success %
+</div>
+
+</div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="cta" id="contact">
+
+<h2 class="heading">
+Start Your Internship Journey
+</h2>
+
+<a href="#" class="btn">
+Join Now
+</a>
+
+</section>
+
+<footer>
+© 2026 InternMatch | Built for Students
+</footer>
+
+<script>
+
+let counters=document.querySelectorAll(".counter");
+
+counters.forEach(counter=>{
+
+let target=+counter.dataset.target;
+
+let update=()=>{
+
+let current=+counter.innerText;
+
+let inc=Math.ceil(target/50);
+
+if(current<target){
+
+counter.innerText=current+inc;
+
+setTimeout(update,40);
+
+}
+
+else{
+
+counter.innerText=target;
+
+}
+
+};
+
+update();
+
+});
+
+</script>
+
+</body>
+</html>
