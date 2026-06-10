@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Student Expense Tracker</title>
+
+    <style>
+      body {
+        background: linear-gradient(135deg, #eef4ff, #dbeafe);
+      }
+
+      .navbar {
+        display: flex;
+
+        justify-content: space-between;
+
+        padding: 20px 10%;
+
+        position: sticky;
+
+        top: 0;
+
+        background: rgba(255, 255, 255, 0.7);
+
+        backdrop-filter: blur(20px);
+      }
+
+      .navbar ul {
+        display: flex;
+
+        gap: 40px;
+
+        list-style: none;
+      }
+
+      .navbar a {
+        text-decoration: none;
+
+        color: #333;
+      }
+
+      .hero {
+        text-align: center;
+
+        padding: 100px 20px;
+      }
+
+      .hero h1 {
+        font-size: 72px;
+
+        color: #1d4ed8;
+      }
+
+      .hero button {
+        margin-top: 30px;
+
+        padding: 18px 40px;
+      }
+
+      .reminders {
+        display: grid;
+
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+        gap: 20px;
+      }
+
+      .reminder {
+        background: white;
+
+        padding: 25px;
+
+        border-radius: 20px;
+
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+        transition: 0.4s;
+      }
+
+      .reminder:hover {
+        transform: translateY(-8px);
+      }
+
+      .categories {
+        padding: 80px;
+      }
+
+      .grid {
+        display: grid;
+
+        grid-template-columns: repeat(5, 1fr);
+
+        gap: 20px;
+      }
+
+      .grid div {
+        background: white;
+
+        padding: 40px;
+
+        border-radius: 20px;
+
+        text-align: center;
+
+        font-size: 22px;
+      }
+
+      footer {
+        margin-top: 100px;
+
+        background: #111827;
+
+        color: white;
+
+        padding: 60px;
+
+        display: flex;
+
+        justify-content: space-between;
+      }
+
+      footer a {
+        display: block;
+
+        margin: 10px;
+
+        color: #ccc;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+      <div class="logo">💸 ExpenseFlow</div>
+
+      <ul>
+        <li>
+          <a href="#"> Dashboard </a>
+        </li>
+
+        <li>
+          <a href="#"> Expenses </a>
+        </li>
+
+        <li>
+          <a href="#"> Analytics </a>
+        </li>
+
+        <li>
+          <a href="#"> Reminder </a>
+        </li>
+      </ul>
+
+      <button>Get Started</button>
+    </nav>
+
+    <!-- HERO -->
+
+    <section class="hero">
+      <h1>Student Expense Tracker</h1>
+
+      <p>Track spending. Save money. Visualize growth.</p>
+
+      <button>Track Now →</button>
+    </section>
+
+    <!-- REMINDERS -->
+
+    <section class="reminder-section">
+      <h2>Upcoming Reminders</h2>
+
+      <div class="reminders">
+        <div class="reminder">
+          📚
+
+          <h3>Buy Semester Books</h3>
+
+          <p>Due: 10 June</p>
+        </div>
+
+        <div class="reminder">
+          🍔
+
+          <h3>Monthly Food Budget</h3>
+
+          <p>Remaining ₹1800</p>
+        </div>
+
+        <div class="reminder">
+          🏠
+
+          <h3>Hostel Fees</h3>
+
+          <p>Due in 8 Days</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DASHBOARD -->
+
+    <section class="dashboard">
+      <div class="left">
+        <!-- Add Expense -->
+      </div>
+
+      <div class="right">
+        <!-- Summary + Chart -->
+      </div>
+    </section>
+
+    <!-- CATEGORY -->
+
+    <section class="categories">
+      <h2>Expense Categories</h2>
+
+      <div class="grid">
+        <div>🍕 Food</div>
+
+        <div>🚌 Travel</div>
+
+        <div>📘 Books</div>
+
+        <div>🎮 Entertainment</div>
+
+        <div>🛒 Other</div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+      <div>
+        <h3>ExpenseFlow</h3>
+
+        <p>Built for Students</p>
+      </div>
+
+      <div>
+        <a> About </a>
+
+        <a> Features </a>
+
+        <a> Contact </a>
+      </div>
+    </footer>
+  </body>
+</html>
