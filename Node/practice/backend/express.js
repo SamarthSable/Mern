@@ -1,16 +1,22 @@
 import express from "express";
-import mongoose from "mongoose";
 import dotenv from "dotenv";
-import dataBase from "./db.js";
+import db from "./db.js";
+import cookieParser from "cookie-parser";
+import authRouter from "./routes/authrouter.js";
 dotenv.config();
-const port = 5000;
 const app = express();
 app.use(express.json());
-dataBase();
+app.use(cookieParser());
+const database = db();
 app.get("/", (req, res) => {
-  res.send("All settled");
+  res.send("Welcome");
 });
 
-app.listen(port, () => {
-  console.log("App Is Running on Port", port);
+app.use("/", authRouter);
+// app.get("/login", (req, res) => {
+//   res.send("Welcome To login");
+// });
+
+app.listen(process.env.PORT, () => {
+  console.log("App Is Running", process.env.PORT);
 });

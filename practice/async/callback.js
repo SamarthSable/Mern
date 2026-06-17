@@ -149,7 +149,7 @@
 // Steps:
 // loginUser(username)
 // addToCart(user, product)
-// makePayment(cart)
+// makePayment(cart) 
 // placeOrder(payment)
 
 // function loginUser(user, callback) {

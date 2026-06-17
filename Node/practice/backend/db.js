@@ -1,9 +1,10 @@
 import mongoose from "mongoose";
 
-const dataBase = async () => {
-  await mongoose.connect(process.env.DB_URL).then(() => {
-    console.log("Connected");
-  });
-};
+function db() {
+  const database = mongoose
+    .connect(process.env.DB_URL)
+    .then(console.log("connected"));
+  return database;
+}
 
-export default dataBase;
+export default db;
