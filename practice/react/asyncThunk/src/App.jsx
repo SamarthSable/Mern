@@ -1,4 +1,4 @@
-import Show from "../pages/Show";
+import Show from "./pages/Show";
 import "./App.css";
 
 function App() {
